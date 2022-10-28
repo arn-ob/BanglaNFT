@@ -26,7 +26,11 @@ export default function Details() {
                         </p>
 
                     </div>
-                </div>
+                </div>  
+
+                <p class="mb-1 mt-5 pl-2 text-xl"> 
+                    Introduction 
+                </p>
 
                 <Table />
             </div>

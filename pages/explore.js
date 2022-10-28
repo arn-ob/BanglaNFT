@@ -33,9 +33,12 @@ export default function Explore() {
         <>
             <Header />
 
-            <Tenet 
-                tenet={tenets} 
-            />
+            <div className=" container">
+                <Tenet
+                    tenet={tenets}
+                />
+            </div>
+
         </>
     )
 }
