@@ -32,7 +32,9 @@ export default function Home() {
             <Header />
 
             <div className="container mx-auto px-4 py-8 flex items-center">
-                <Swipers />
+                <p class="text-xl">
+                    Welcome to BanglaNFT
+                </p>
             </div>
 
             <div className=" container mx-auto">

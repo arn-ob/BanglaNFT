@@ -28,14 +28,14 @@ export default function Swipers() {
         navigation={true}
         modules={[Keyboard, Pagination, Navigation]}
         style={{
-            height: 500
+            height: 300
         }}
       >
         <SwiperSlide>
             <img  
                 alt="nasd" 
-                className="object-fill h-fit" 
-                src="https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg" 
+                className="mx-auto object-fill" 
+                src="https://img.freepik.com/premium-vector/ethereum-eth-coin-banner-eth-coin-cryptocurrency-concept-banner-background_32996-1565.jpg" 
             />
         </SwiperSlide>
       </Swiper>

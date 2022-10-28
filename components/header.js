@@ -1,4 +1,3 @@
-import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Menu, Space } from 'antd';
 import React from 'react';
 
@@ -39,14 +38,11 @@ const menu = (
 export default function Header() {
     return (
         <>
-            <header className="bg-white">
-                <div className="container mx-auto px-4 py-8 flex items-center">
-                    <div 
-                        onClick={() => window.location.href = "/"} 
-                        className="mr-auto md:w-48 flex-shrink-0"
-                    >
+            <header className="bg-white shadow">
+                <div className="container mx-auto px-4 py-2 flex items-center">
+                    <button onClick={() => window.location.href = "/"} >
                         BanglaNFT
-                    </div>
+                    </button>
 
                     <div className="w-full max-w-xs xl:max-w-lg 2xl:max-w-2xl bg-gray-100 rounded-md hidden xl:flex items-center">
                     </div>
