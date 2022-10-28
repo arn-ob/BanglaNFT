@@ -1,11 +1,11 @@
 export default function Tenet({ tenet }) {
     return (
-        <div className="px-3 md:lg:xl:px-40 py-20 bg-opacity-10">
-            <div className="grid grid-cols-1 md:lg:xl:grid-cols-3 group">
+        <div className="px-3 md:lg:xl:px-40 py-10 bg-opacity-10">
+            <div className="grid grid-cols-1 md:lg:xl:grid-cols-4 group">
                 {
                     Array.isArray(tenet) && tenet.length !== 0 && tenet.map(item => {
                         return (
-                            <div className="p-10 flex flex-col items-center text-center group">
+                            <div className="border m-2 shadow p-10 flex flex-col items-center text-center group">
                                 <span className="p-5 rounded-full bg-red-300 text-white shadow-lg shadow-red-200">
                                     {/* <svg
                                         xmlns="http://www.w3.org/2000/svg"

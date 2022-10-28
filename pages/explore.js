@@ -2,11 +2,9 @@ import { useState } from "react";
 
 // components
 import Header from "../components/header";
-import Swipers from "../components/swiper";
 import Tenet from '../components/tenet'
 
-
-export default function Home() {
+export default function Explore() {
 
     const [tenets, setTenets] = useState([
         {
@@ -24,16 +22,16 @@ export default function Home() {
         {
             name: 'test 21',
             trx: 6,
+        },
+        {
+            name: 'test 21',
+            trx: 6,
         }
     ])
 
     return (
         <>
             <Header />
-
-            <div className="container mx-auto px-4 py-8 flex items-center">
-                <Swipers />
-            </div>
 
             <Tenet 
                 tenet={tenets} 
