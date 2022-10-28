@@ -33,7 +33,7 @@ export default function Explore() {
         <>
             <Header />
 
-            <div className=" container">
+            <div className=" container mx-auto">
                 <Tenet
                     tenet={tenets}
                 />

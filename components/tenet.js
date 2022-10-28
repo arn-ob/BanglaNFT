@@ -1,6 +1,6 @@
 export default function Tenet({ tenet }) {
     return (
-        <div className="px-3 md:lg:xl:px-40 py-10 bg-opacity-10">
+        <div className="bg-opacity-10">
             <div className="grid grid-cols-1 md:lg:xl:grid-cols-4 group">
                 {
                     Array.isArray(tenet) && tenet.length !== 0 && tenet.map(item => {

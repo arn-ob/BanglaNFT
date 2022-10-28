@@ -56,8 +56,6 @@ export default function Home() {
 
   return (
     <>
-
-
       <div className="container">
         <div>
           <button className="btn" onClick={writeData}>

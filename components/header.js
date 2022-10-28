@@ -1,10 +1,51 @@
+import { DownOutlined } from '@ant-design/icons';
+import { Dropdown, Menu, Space } from 'antd';
+import React from 'react';
+
+
+const menu = (
+    <Menu
+        items={[
+            {
+                label: (
+                    <a rel="noopener noreferrer" href="/explore">
+                        Explore
+                    </a>
+                ),
+                key: '0',
+            },
+            {
+                label: (
+                    <a rel="noopener noreferrer" href="https://www.aliyun.com">
+                        Login
+                    </a>
+                ),
+                key: '1',
+            },
+            {
+                label: (
+                    <a rel="noopener noreferrer" href="/reg">
+                        Registration
+                    </a>
+                ),
+                key: '2',
+            },
+        ]}
+    />
+);
+
+
+
 export default function Header() {
     return (
         <>
             <header className="bg-white">
                 <div className="container mx-auto px-4 py-8 flex items-center">
-                    <div onClick={() =>  window.location.href = "/"} className="mr-auto md:w-48 flex-shrink-0">
-                        BanlaNFT
+                    <div 
+                        onClick={() => window.location.href = "/"} 
+                        className="mr-auto md:w-48 flex-shrink-0"
+                    >
+                        BanglaNFT
                     </div>
 
                     <div className="w-full max-w-xs xl:max-w-lg 2xl:max-w-2xl bg-gray-100 rounded-md hidden xl:flex items-center">
@@ -22,12 +63,15 @@ export default function Header() {
                             </li>
                             <li className="ml-2 lg:ml-4 relative inline-block">
                                 <div className="">
-                                    <a className="">
-                                        <img 
-                                            className="h-9 lg:h-10 p-2 text-gray-500" 
-                                            src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Menu-8-bits-others-inmotus-design.png" 
-                                        />
-                                    </a>
+                                    <Dropdown overlay={menu}>
+                                        <a onClick={e => e.preventDefault()}>
+                                            <img
+                                                className="h-9 lg:h-10 p-2 text-gray-500"
+                                                src="https://img.icons8.com/external-others-inmotus-design/67/000000/external-Menu-8-bits-others-inmotus-design.png"
+                                            />
+                                        </a>
+                                    </Dropdown>
+
                                 </div>
 
                             </li>

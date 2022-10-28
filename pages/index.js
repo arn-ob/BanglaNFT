@@ -35,9 +35,13 @@ export default function Home() {
                 <Swipers />
             </div>
 
-            <Tenet 
-                tenet={tenets} 
-            />
+            <div className=" container mx-auto">
+                <Tenet
+                    tenet={tenets}
+                />
+            </div>
+
+            <div className="mb-10" /> 
         </>
     )
 }
