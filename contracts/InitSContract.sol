@@ -1,14 +1,21 @@
+// contracts/Box.sol
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.0;
 
-contract BasicSmartContract {
-    string public stateVariable = "0xB12ab21C6e26e8305A46DB81C5852F5ed1f8C146";
+contract Box {
+    uint256 private _value;
 
-    uint256 public changeStateVariable;
+    // Emitted when the stored value changes
+    event ValueChanged(uint256 value);
 
-    constructor() {}
+    // Stores a new value in the contract
+    function store(uint256 value) public {
+        _value = value;
+        emit ValueChanged(value);
+    }
 
-    function changeState(uint256 _changeStateVariable) public payable {
-        changeStateVariable = _changeStateVariable;
+    // Reads the last stored value
+    function retrieve() public view returns (uint256) {
+        return _value;
     }
 }
