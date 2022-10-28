@@ -1,71 +1,40 @@
-import React, { useEffect, useState } from "react";
-import Web3 from "web3";
-import Web3Utils from 'web3-utils';
-
-import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../constants";
-
+import { useState } from "react";
+import Header from "../components/header";
+import Swipers from "../components/swiper";
+import Tenet from '../components/tenet'
 
 export default function Home() {
 
-  const [walletAddress, setWalletAddress] = useState();
+    const [tenets, setTenets] = useState([
+        {
+            name: 'test 23',
+            trx: 1,
+        },
+        {
+            name: 'test 24',
+            trx: 2,
+        },
+        {
+            name: 'test 21',
+            trx: 6,
+        },
+        {
+            name: 'test 21',
+            trx: 6,
+        }
+    ])
 
-  useEffect(() => {
-    connectMeta();
-  }, []);
+    return (
+        <>
+            <Header />
 
-  let provider = typeof window !== "undefined" && window.ethereum;
+            <div className="container mx-auto px-4 py-8 flex items-center">
+                <Swipers />
+            </div>
 
-  const connectMeta = async () => {
-    try {
-      if (!provider) return alert("Please Install MetaMask");
-
-      const accounts = await provider.request({
-        method: "eth_requestAccounts",
-      });
-
-      if (accounts.length) {
-        setWalletAddress(accounts[0]);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const getContract = () => {
-    const web3 = new Web3(provider);
-
-    return new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
-  };
-
-
-  const writeData = () => {
-    const contract = getContract();
-
-    contract.methods
-      .ChangeState(100)
-      .send({
-        from: walletAddress,
-        value: Web3Utils.toWei('0.00005', 'ether'),
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
-  };
-
-
-  return (
-    <>
-
-
-      <div className="container">
-        <div>
-          <button className="btn" onClick={writeData}>
-            MetaMask-Test
-          </button>
-        </div>
-      </div>
-    </>
-
-  );
+            <Tenet 
+                tenet={tenets} 
+            />
+        </>
+    )
 }
