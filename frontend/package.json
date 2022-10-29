@@ -1,0 +1,28 @@
+{
+  "name": "bangla-nft",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.23.6",
+    "autoprefixer": "^10.4.13",
+    "next": "12.1.5",
+    "postcss": "^8.4.18",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "swiper": "^8.4.4",
+    "tailwindcss": "^3.2.1",
+    "web3": "^1.7.3",
+    "web3-utils": "^1.8.0"
+  },
+  "devDependencies": {
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.5",
+    "hardhat": "^2.12.1"
+  }
+}
