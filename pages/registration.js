@@ -13,13 +13,18 @@ export default function Registration() {
 
 
     const handleSubmit = async () => {
-        await axios.post("http://localhost:3300/create", {
+
+        let _data = {
             fst_name: fstname,
             last_name: lastname,
             dob,
             nid,
             address,
-        })
+        }
+
+        _data = JSON.stringify(_data)
+
+        await axios.post("http://localhost:3300/create", _data)
 
         message.destroy()
         message.success("User Created")
@@ -40,13 +45,22 @@ export default function Registration() {
                             <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
                                 First Name
                             </label>
-                            <input onChange={(e) => setFstname(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane" />
+                            <input 
+                                onChange={(e) => setFstname(e.target.value)} 
+                                className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" 
+                                type="text" 
+                                placeholder="Frist Name" />
                         </div>
                         <div className="md:w-1/2 px-3">
                             <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
                                 Last Name
                             </label>
-                            <input onChange={(e) => setLastname(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe" />
+                            <input 
+                                onChange={(e) => setLastname(e.target.value)} 
+                                className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" 
+                                type="text" 
+                                placeholder="Last Name" 
+                            />
                         </div>
                     </div>
                 </div>
@@ -58,14 +72,14 @@ export default function Registration() {
                             <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
                                 DOB
                             </label>
-                            <input onChange={(e) => setDob(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane" />
+                            <input onChange={(e) => setDob(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="DOB" />
                         </div>
 
                         <div className="md:w-1/2 px-3">
                             <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
                                 NID
                             </label>
-                            <input onChange={(e) => setNid(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe" />
+                            <input onChange={(e) => setNid(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="NID" />
                         </div>
                     </div>
                     <div className="-mx-3 md:flex mb-6">
@@ -73,7 +87,7 @@ export default function Registration() {
                             <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
                                 Address
                             </label>
-                            <input onChange={(e) => setAddress(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane" />
+                            <input onChange={(e) => setAddress(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Address" />
                         </div>
 
                     </div>

@@ -15,7 +15,7 @@ export default function Home() {
     }, [])
 
     const findUser = async () => {
-        let data = await axios.post("http://localhost:3300/list")
+        let data = await axios.post("/api/list")
         setTenets(data.data)
     }
 
