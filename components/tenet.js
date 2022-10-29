@@ -2,10 +2,10 @@ import { message } from "antd";
 import React, { useState } from "react";
 import Web3 from "web3";
 import Web3Utils from 'web3-utils';
+import moment from 'moment'
 
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../constants";
 
-import axios from "axios";
 import { rPost } from "ssr-fetch";
 
 export default function Tenet({ tenet }) {
@@ -48,8 +48,6 @@ export default function Tenet({ tenet }) {
 
         const contract = getContract();
 
-        
-
         contract.methods
             .ChangeState(100)
             .send({
@@ -62,7 +60,7 @@ export default function Tenet({ tenet }) {
                     coin: ether, 
                     userdetails: JSON.stringify(item), 
                     blockRec: JSON.stringify(res), 
-                    date: new Date(),
+                    date: moment().format(),
                 })    
                 console.log(JSON.stringify(res));
 
