@@ -10,8 +10,6 @@ export default function Tenet({ tenet }) {
 
     const [walletAddress, setWalletAddress] = useState();
 
-    // useEffect(() => { connectMeta(); }, []);
-
     let provider = typeof window !== "undefined" && window.ethereum;
 
     const connectMeta = async () => {
@@ -77,7 +75,7 @@ export default function Tenet({ tenet }) {
                                 </span>
 
                                 <p className="text-xl font-medium text-slate-700 mt-3">
-                                    {item.name}
+                                    {item.fst_name}
                                 </p>
                                 <p className="mt-2 text-sm text-slate-500">
                                     Total ETH: 0.000001
@@ -89,7 +87,6 @@ export default function Tenet({ tenet }) {
                                     </button>
                                 </div>
                             </div>
-
                         )
                     })
                 }

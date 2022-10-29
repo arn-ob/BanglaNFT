@@ -23,7 +23,7 @@ const menu = (
             },
             {
                 label: (
-                    <a rel="noopener noreferrer" href="/reg">
+                    <a rel="noopener noreferrer" href="/registration">
                         Registration
                     </a>
                 ),

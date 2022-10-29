@@ -1,4 +1,5 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 // components
 import Header from "../components/header";
@@ -6,28 +7,16 @@ import Tenet from '../components/tenet'
 
 export default function Explore() {
 
-    const [tenets, setTenets] = useState([
-        {
-            name: 'test 23',
-            trx: 1,
-        },
-        {
-            name: 'test 24',
-            trx: 2,
-        },
-        {
-            name: 'test 21',
-            trx: 6,
-        },
-        {
-            name: 'test 21',
-            trx: 6,
-        },
-        {
-            name: 'test 21',
-            trx: 6,
-        }
-    ])
+    const [tenets, setTenets] = useState([])
+
+    useEffect(() => {
+        findUser()
+    }, [])
+
+    const findUser = async () => {
+        let data = await axios.post("http://localhost:3300/list")
+        setTenets(data.data)
+    }
 
     return (
         <>

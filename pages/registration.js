@@ -1,13 +1,38 @@
+import { useState } from "react";
 import Header from "../components/header";
-
+import axios from 'axios'
+import { Button, message } from "antd";
 
 export default function Registration() {
+
+    const [fstname, setFstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [dob, setDob] = useState("");
+    const [nid, setNid] = useState("");
+    const [address, setAddress] = useState("");
+
+
+    const handleSubmit = async () => {
+        await axios.post("http://localhost:3300/create", {
+            fst_name: fstname,
+            last_name: lastname,
+            dob,
+            nid,
+            address,
+        })
+
+        message.destroy()
+        message.success("User Created")
+
+    }
+
+
     return (
-        <>  
+        <>
             <Header />
-            
+
             <div className="container mx-auto">
-                
+
                 <div className="bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
                     <p class="mb-6 text-xl"> Introduction </p>
                     <div className="-mx-3 md:flex mb-6">
@@ -15,13 +40,13 @@ export default function Registration() {
                             <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
                                 First Name
                             </label>
-                            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane" />
+                            <input onChange={(e) => setFstname(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane" />
                         </div>
                         <div className="md:w-1/2 px-3">
                             <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
                                 Last Name
                             </label>
-                            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe" />
+                            <input onChange={(e) => setLastname(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe" />
                         </div>
                     </div>
                 </div>
@@ -33,14 +58,14 @@ export default function Registration() {
                             <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
                                 DOB
                             </label>
-                            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane" />
+                            <input onChange={(e) => setDob(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane" />
                         </div>
 
                         <div className="md:w-1/2 px-3">
                             <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
                                 NID
                             </label>
-                            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe" />
+                            <input onChange={(e) => setNid(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe" />
                         </div>
                     </div>
                     <div className="-mx-3 md:flex mb-6">
@@ -48,19 +73,17 @@ export default function Registration() {
                             <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
                                 Address
                             </label>
-                            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane" />
+                            <input onChange={(e) => setAddress(e.target.value)} className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane" />
                         </div>
-                        
-                        <div className="md:w-1/2 px-3">
-                            <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
-                                Permanent Address
-                            </label>
-                            <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe" />
-                        </div>
+
                     </div>
                 </div>
-                
+
+                <Button block onClick={handleSubmit}>
+                    Submit
+                </Button>
             </div>
+
         </>
     )
 }
