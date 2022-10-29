@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../components/header";
 import axios from 'axios'
 import { Button, message } from "antd";
+import { rPost } from "ssr-fetch";
 
 export default function Registration() {
 
@@ -22,9 +23,7 @@ export default function Registration() {
             address,
         }
 
-        _data = JSON.stringify(_data)
-
-        await axios.post("http://localhost:3300/create", _data)
+        await rPost('/create', _data)
 
         message.destroy()
         message.success("User Created")

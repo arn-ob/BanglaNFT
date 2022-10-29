@@ -7,28 +7,20 @@ const menu = (
         items={[
             {
                 label: (
-                    <a rel="noopener noreferrer" href="/explore">
-                        Explore
-                    </a>
-                ),
-                key: '0',
-            },
-            {
-                label: (
                     <a rel="noopener noreferrer" href="/transaction">
                         Transaction
                     </a>
                 ),
                 key: '1',
             },
-            {
-                label: (
-                    <a rel="noopener noreferrer" href="https://www.aliyun.com">
-                        Login
-                    </a>
-                ),
-                key: '2',
-            },
+            // {
+            //     label: (
+            //         <a rel="noopener noreferrer" href="https://www.aliyun.com">
+            //             Login
+            //         </a>
+            //     ),
+            //     key: '2',
+            // },
             {
                 label: (
                     <a rel="noopener noreferrer" href="/registration">

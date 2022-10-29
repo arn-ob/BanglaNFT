@@ -48,7 +48,7 @@ export default function Tenet({ tenet }) {
 
         const contract = getContract();
 
-        message.destroy();
+        
 
         contract.methods
             .ChangeState(100)
@@ -65,8 +65,13 @@ export default function Tenet({ tenet }) {
                     date: new Date(),
                 })    
                 console.log(JSON.stringify(res));
+
+                message.destroy();
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err)
+                message.destroy();
+            });
     };
 
 
