@@ -82,7 +82,7 @@ export default function Tenet({ tenet }) {
                                 </p>
 
                                 <div className="mt-2">
-                                    <button onClick={writeData}>
+                                    <button className="inline-block w-full px-2 py-2 font-medium text-center text-white transition duration-200 bg-gray-600 rounded-lg hover:bg-gray-500 ease" onClick={writeData}>
                                         Add to Cart
                                     </button>
                                 </div>

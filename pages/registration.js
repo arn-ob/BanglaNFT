@@ -33,7 +33,7 @@ export default function Registration() {
 
             <div className="container mx-auto">
 
-                <div className="bg-white rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+                <div className="bg-white rounded px-8 pt-6 mb-4 flex flex-col my-2">
                     <p class="mb-6 text-xl"> Introduction </p>
                     <div className="-mx-3 md:flex mb-6">
                         <div className="md:w-1/2 px-3 mb-6 md:mb-0">
@@ -51,7 +51,7 @@ export default function Registration() {
                     </div>
                 </div>
 
-                <div className="bg-white rounded px-8 pb-8 mb-4 flex flex-col my-2">
+                <div className="bg-white rounded px-8 mb-4 flex flex-col">
                     <p class="mb-6 text-xl"> Relation </p>
                     <div className="-mx-3 md:flex mb-6">
                         <div className="md:w-1/2 px-3 mb-6 md:mb-0">
@@ -79,9 +79,14 @@ export default function Registration() {
                     </div>
                 </div>
 
-                <Button block onClick={handleSubmit}>
-                    Submit
-                </Button>
+                <div className=" container">
+                    <button
+                        className="mb-10 mx-8 inline-block px-3 py-2 text-xl font-medium text-center text-white transition duration-200 bg-green-800 rounded-lg hover:bg-green-700 ease"
+                        onClick={handleSubmit}
+                    >
+                        Submit
+                    </button>
+                </div>
             </div>
 
         </>
