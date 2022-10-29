@@ -6,6 +6,7 @@ import Web3Utils from 'web3-utils';
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../constants";
 
 import axios from "axios";
+import { rPost } from "ssr-fetch";
 
 export default function Tenet({ tenet }) {
 
@@ -49,6 +50,7 @@ export default function Tenet({ tenet }) {
 
         message.destroy();
 
+
         contract.methods
             .ChangeState(100)
             .send({
@@ -56,9 +58,7 @@ export default function Tenet({ tenet }) {
                 value: Web3Utils.toWei(ether, 'ether'),
             })
             .then(async (res) => {
-
-                await axios.post('/api/trax', { coin: ether, userdetails: JSON.stringify(item) })
-
+                await rPost('/trax', { coin: ether, userdetails: JSON.stringify(item), blockRec: JSON.stringify(res) })    
                 console.log(JSON.stringify(res));
             })
             .catch((err) => console.log(err));
@@ -71,8 +71,9 @@ export default function Tenet({ tenet }) {
                 {
                     Array.isArray(tenet) && tenet.length !== 0 && tenet.map(item => {
                         return (
-
-                            <div className="border m-2 shadow p-10 flex flex-col items-center text-center group">
+                             <div className="border m-2 shadow p-10 flex flex-col items-center text-center group">
+                                {console.log(item)}
+                            
                                 <span className="p-5 rounded-full bg-red-300 text-white shadow-lg shadow-red-200">
                                     <img
                                         className="h-10 w-10"
@@ -88,7 +89,10 @@ export default function Tenet({ tenet }) {
                                 </p>
 
                                 <div className="mt-2">
-                                    <button className="inline-block w-full px-2 py-2 font-medium text-center text-white transition duration-200 bg-gray-600 rounded-lg hover:bg-gray-500 ease" onClick={writeData}>
+                                    <button 
+                                        className="inline-block w-full px-2 py-2 font-medium text-center text-white transition duration-200 bg-gray-600 rounded-lg hover:bg-gray-500 ease" 
+                                        onClick={() => writeData(item)}
+                                    >
                                         Add to Cart
                                     </button>
                                 </div>

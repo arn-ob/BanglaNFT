@@ -9907,6 +9907,11 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
+ssr-fetch@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/ssr-fetch/-/ssr-fetch-1.0.11.tgz#527e470bef700e4fc8d7de7acc06dedc9dea1e7a"
+  integrity sha512-v5btifZI3o2rKRGCB3Qy5F3pi4xp6HpKrGheMHWBqXSz1L7E6xBzkGlR6iN2+uP5huEazTOgC1w0f0i+59scRg==
+
 ssr-window@^4.0.0, ssr-window@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-4.0.2.tgz#dc6b3ee37be86ac0e3ddc60030f7b3bc9b8553be"

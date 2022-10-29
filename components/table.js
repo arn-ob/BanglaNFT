@@ -25,7 +25,6 @@ export default function Table({ traxList }) {
                         </thead>
 
                         <tbody>
-                           
                                 {
                                     Array.isArray(traxList) && traxList.map(item => {
                                         return (
@@ -64,7 +63,6 @@ export default function Table({ traxList }) {
                                         )
                                     })
                                 }
-
                         </tbody>
                     </table>
                 </div>
