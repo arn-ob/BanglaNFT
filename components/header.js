@@ -15,11 +15,19 @@ const menu = (
             },
             {
                 label: (
+                    <a rel="noopener noreferrer" href="/transaction">
+                        Transaction
+                    </a>
+                ),
+                key: '1',
+            },
+            {
+                label: (
                     <a rel="noopener noreferrer" href="https://www.aliyun.com">
                         Login
                     </a>
                 ),
-                key: '1',
+                key: '2',
             },
             {
                 label: (
@@ -27,7 +35,7 @@ const menu = (
                         Registration
                     </a>
                 ),
-                key: '2',
+                key: '3',
             },
         ]}
     />

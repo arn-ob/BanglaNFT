@@ -7,10 +7,10 @@ export default function Table({ traxList }) {
                         <thead>
                             <tr>
                                 <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Name
+                                    From
                                 </th>
                                 <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Contact No
+                                    To
                                 </th>
                                 <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     ETH
@@ -25,44 +25,47 @@ export default function Table({ traxList }) {
                         </thead>
 
                         <tbody>
-                                {
-                                    Array.isArray(traxList) && traxList.map(item => {
-                                        return (
-                                            <tr>
+                            {
+                                Array.isArray(traxList) && traxList.map(item => {
+                                    return (
+                                        <tr>
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <div className="flex items-center">
+                                                <div className="flex items-center">
+                                                    <p className="text-gray-900 whitespace-no-wrap">
+                                                        {item.from}
+                                                    </p>
+                                                </div>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <p className="text-gray-900 whitespace-no-wrap">
-                                                    Paerson 1
+                                                    {item.to}
                                                 </p>
-                                            </div>
-                                        </td>
-                                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <p className="text-gray-900 whitespace-no-wrap">
-                                                0199999999
-                                            </p>
-                                        </td>
-                                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <p className="text-gray-900 whitespace-no-wrap">
-                                                10 ETH
-                                            </p>
-                                        </td>
-                                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <p className="text-gray-900 whitespace-no-wrap">
-                                                Jan 21, 2020
-                                            </p>
-                                        </td>
-                                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                            <span
-                                                className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                                <span aria-hidden
-                                                    className="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                                <span className="relative">Paid</span>
-                                            </span>
-                                        </td>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <p className="text-gray-900 whitespace-no-wrap">
+                                                    {item.coin} ETH
+                                                </p>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <p className="text-gray-900 whitespace-no-wrap">
+                                                    {item.date}
+                                                </p>
+                                            </td>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                                <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                                    <span
+                                                        aria-hidden
+                                                        className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+                                                    ></span>
+                                                    <span className="relative">
+                                                        Success
+                                                    </span>
+                                                </span>
+                                            </td>
                                         </tr>
-                                        )
-                                    })
-                                }
+                                    )
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>
