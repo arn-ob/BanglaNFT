@@ -50,7 +50,6 @@ export default function Tenet({ tenet }) {
 
         message.destroy();
 
-
         contract.methods
             .ChangeState(100)
             .send({
@@ -58,7 +57,13 @@ export default function Tenet({ tenet }) {
                 value: Web3Utils.toWei(ether, 'ether'),
             })
             .then(async (res) => {
-                await rPost('/trax', { coin: ether, userdetails: JSON.stringify(item), blockRec: JSON.stringify(res) })    
+                await rPost('/trax', { 
+                    from: walletAddress, 
+                    coin: ether, 
+                    userdetails: JSON.stringify(item), 
+                    blockRec: JSON.stringify(res), 
+                    date: new Date(),
+                })    
                 console.log(JSON.stringify(res));
             })
             .catch((err) => console.log(err));
