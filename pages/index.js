@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 // components
 import Header from "../components/header";
+import Swipers from "../components/swiper";
 import Tenet from '../components/tenet'
 
 
@@ -28,6 +29,12 @@ export default function Home() {
                     Welcome to BanglaNFT
                 </p>
             </div>
+
+
+            <div className="container mx-auto">
+                {/* <Swipers /> */}
+            </div>
+
 
             <div className=" container mx-auto">
                 <Tenet
