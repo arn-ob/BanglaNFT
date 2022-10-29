@@ -5,10 +5,13 @@ import Web3Utils from 'web3-utils';
 
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../constants";
 
+import axios from "axios";
 
 export default function Tenet({ tenet }) {
 
     const [walletAddress, setWalletAddress] = useState();
+
+    const ether = '0.000001';
 
     let provider = typeof window !== "undefined" && window.ethereum;
 
@@ -35,7 +38,7 @@ export default function Tenet({ tenet }) {
     };
 
 
-    const writeData = async () => {
+    const writeData = async (item) => {
 
         message.destroy();
         message.loading("Please wait...")
@@ -50,10 +53,13 @@ export default function Tenet({ tenet }) {
             .ChangeState(100)
             .send({
                 from: walletAddress,
-                value: Web3Utils.toWei('0.000001', 'ether'),
+                value: Web3Utils.toWei(ether, 'ether'),
             })
-            .then((res) => {
-                console.log(res);
+            .then(async (res) => {
+
+                await axios.post('/api/trax', { coin: ether, userdetails: JSON.stringify(item) })
+
+                console.log(JSON.stringify(res));
             })
             .catch((err) => console.log(err));
     };

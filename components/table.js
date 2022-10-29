@@ -1,4 +1,4 @@
-export default function Table() {
+export default function Table({ traxList }) {
     return (
         <div>
             <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -23,40 +23,48 @@ export default function Table() {
                                 </th>
                             </tr>
                         </thead>
-                        
+
                         <tbody>
-                            <tr>
-                                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <div className="flex items-center">
-                                        <p className="text-gray-900 whitespace-no-wrap">
-                                            Paerson 1
-                                        </p>
-                                    </div>
-                                </td>
-                                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p className="text-gray-900 whitespace-no-wrap">
-                                        0199999999
-                                    </p>
-                                </td>
-                                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p className="text-gray-900 whitespace-no-wrap">
-                                        10 ETH
-                                    </p>
-                                </td>
-                                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p className="text-gray-900 whitespace-no-wrap">
-                                        Jan 21, 2020
-                                    </p>
-                                </td>
-                                <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <span
-                                        className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                        <span aria-hidden
-                                            className="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                        <span className="relative">Paid</span>
-                                    </span>
-                                </td>
-                            </tr>
+                           
+                                {
+                                    Array.isArray(traxList) && traxList.map(item => {
+                                        return (
+                                            <tr>
+                                            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <div className="flex items-center">
+                                                <p className="text-gray-900 whitespace-no-wrap">
+                                                    Paerson 1
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <p className="text-gray-900 whitespace-no-wrap">
+                                                0199999999
+                                            </p>
+                                        </td>
+                                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <p className="text-gray-900 whitespace-no-wrap">
+                                                10 ETH
+                                            </p>
+                                        </td>
+                                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <p className="text-gray-900 whitespace-no-wrap">
+                                                Jan 21, 2020
+                                            </p>
+                                        </td>
+                                        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                            <span
+                                                className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                                <span aria-hidden
+                                                    className="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                                <span className="relative">Paid</span>
+                                            </span>
+                                        </td>
+                                        </tr>
+                                        )
+                                    })
+                                }
+
                         </tbody>
                     </table>
                 </div>
